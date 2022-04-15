@@ -1,0 +1,16 @@
+.tag{
+    color: rgb(38, 187, 33);
+    font-size: 12px;
+    font-weight: 500;
+}
+.btn-group{
+    display: flex;
+    justify-content: space-between;
+}
+.fab{
+    font-size: 24px;
+    cursor: pointer;
+}
+li{
+    list-style: none;
+}
