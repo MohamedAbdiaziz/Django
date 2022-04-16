@@ -84,8 +84,6 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-        url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
-        url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     }
 }
 
