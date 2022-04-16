@@ -6,7 +6,7 @@ from tabnanny import verbose
 # from turtle import title
 from unicodedata import category, name
 from venv import create
-from certifi import contents
+
 from django.db import models
 
 # Create your models here.
