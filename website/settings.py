@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-mq#a=wr=-byzsnadg!9m&_$a_35=181+jcap)-c!=h2awj2_bx
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1', "myfirstapp-django.herokuapp.com"]
 
 
 # Application definition
@@ -47,6 +47,7 @@ LOGOUT_REDIRECT_URL = "/"
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -83,6 +84,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
+        url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
     }
 }
 
